@@ -1,4 +1,4 @@
-class RegistrationForm {
+ export class RegistrationForm {
   constructor(config) {
     this.nameInput = document.getElementById(config.nameId);
     this.emailInput = document.getElementById(config.emailId);

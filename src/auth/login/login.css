@@ -60,7 +60,7 @@ body {
   gap: 15px;
 }
 
-.reg-btn {
+.log-btn {
   background-color: rgb(51, 166, 244);
   width: 20rem;
   height: 3rem;
@@ -96,4 +96,3 @@ body {
   border: 2px solid red;
   color: red;
 }
-

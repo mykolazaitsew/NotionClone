@@ -153,6 +153,41 @@ const homePage = () => {
   });
 };
 
+const settingsBtn = () => {
+  const settings = document.querySelector('.settings');
+  const mainContent = document.getElementById('main-content');
+
+  settings.addEventListener('click', () => {
+    mainContent.innerHTML = '';
+    mainContent.innerHTML += `
+<div class="selectdiv">
+<label>
+<select id="my-select">
+  <option value="pick" hidden>Pick a color</option>
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="yellow">Yellow</option>
+</select>
+</label>
+</div>`;
+
+  changePageColor();
+
+  });
+}
+
+const changePageColor = () => {
+  const mySelect = document.getElementById("my-select");
+
+   if (!mySelect) return;
+  
+  mySelect.addEventListener('change', (e) => {  
+    document.body.style.background = e.target.value;
+    document.body.querySelector('.sidenav').style.background = e.target.value;
+  });
+}
+
+
 (async () => {
   changeUserName();
   await addPage();
@@ -161,4 +196,5 @@ const homePage = () => {
   await loadSearchModal();
   searchTasks();
   homePage();
+  settingsBtn();
 })();
